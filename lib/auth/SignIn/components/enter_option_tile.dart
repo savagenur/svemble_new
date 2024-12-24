@@ -10,21 +10,22 @@ class EnterOptionTile extends StatelessWidget {
   final VoidCallback onTap;
 
   const EnterOptionTile({
-    Key? key,
+    super.key,
     required this.iconSvg,
     required this.title,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.symmetric(vertical: 5,horizontal: 15),
       shape: OutlineInputBorder(
           borderSide: const BorderSide(color: kBorderColor),
           borderRadius: BorderRadius.circular(getPropScreenWidth(10))),
       leading: SvgPicture.asset(
         "assets/icons/$iconSvg",
-        width: getPropScreenWidth(30),
+        width: getPropScreenWidth(25),
       ),
       title: Text(
         title,

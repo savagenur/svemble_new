@@ -1,4 +1,4 @@
-package com.example.svemble_new
+package com.skyforge.svemble_new
 
 import io.flutter.embedding.android.FlutterActivity
 

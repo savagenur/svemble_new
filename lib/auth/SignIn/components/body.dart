@@ -44,7 +44,7 @@ class Body extends StatelessWidget {
                 title: "Войти через Facebook",
               ),
               SizedBox(
-                height: getPropScreenWidth(15),
+                height: getPropScreenWidth(10),
               ),
               EnterOptionTile(
                 iconSvg: 'icons8-google.svg',
@@ -52,7 +52,7 @@ class Body extends StatelessWidget {
                 title: "Войти через Google",
               ),
               SizedBox(
-                height: getPropScreenWidth(15),
+                height: getPropScreenWidth(10),
               ),
               EnterOptionTile(
                 iconSvg: 'icons8-apple-logo.svg',

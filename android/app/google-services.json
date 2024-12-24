@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "579571789830",
+    "project_id": "svemble-new",
+    "storage_bucket": "svemble-new.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579571789830:android:d6e6377e235c0f6b3ad387",
+        "android_client_info": {
+          "package_name": "com.skyforge.svemble_new"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8ib4BXwOUwu6Aql2Mi0gJLCqsKMTDlR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

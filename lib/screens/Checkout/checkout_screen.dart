@@ -16,13 +16,10 @@ class CheckoutScreen extends StatelessWidget {
       appBar: buildAppBar(context),
       body: const Body(),
       bottomNavigationBar: BottomAppBar(
-        child: Padding(
-          padding: EdgeInsets.all(getPropScreenWidth(20)),
-          child: DefaultButton(
+        child: DefaultButton(
             text: "Продолжить Оплату",
             onTap: () {},
           ),
-        ),
       ),
     );
   }
