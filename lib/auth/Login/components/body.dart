@@ -38,7 +38,7 @@ class Body extends StatelessWidget {
                 child: const Text(
                   "Забыли пароль?",
                   style: TextStyle(
-                    fontSize: 30,
+                    fontSize: kDefFontSize,
                     decoration: TextDecoration.underline,
                   ),
                 )),

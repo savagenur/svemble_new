@@ -17,7 +17,7 @@ const kTertiaryTextColor = Color.fromARGB(255, 189, 188, 188);
 const double kH1FontSize = 35;
 const double kHeaderFontSize = 20;
 const double kPrimaryFontSize = 18;
-const double kDefaultFontSize = 16;
+const double kDefFontSize = 16;
 const double kTertiaryFontSize = 14;
 const double kQuaternaryFontSize = 10;
 
@@ -37,7 +37,7 @@ final primaryTextStyle = TextStyle(
     color: kPrimaryColor,
     fontWeight: FontWeight.bold);
 final defaultTextStyle = TextStyle(
-  fontSize: getPropScreenWidth(kDefaultFontSize),
+  fontSize: getPropScreenWidth(kDefFontSize),
   color: Colors.black,
   fontWeight: FontWeight.bold,
 );

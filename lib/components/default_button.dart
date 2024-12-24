@@ -12,13 +12,13 @@ class DefaultButton extends StatelessWidget {
   final Color textColor;
 
   const DefaultButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.onTap,
     this.width = double.infinity,
     this.backgroundColor = kPrimaryColor,
     this.textColor = Colors.white,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class DefaultButton extends StatelessWidget {
               fontSize: kPrimaryFontSize,
               fontWeight: FontWeight.bold,
             ),
-            minFontSize: 30,
+            minFontSize: kDefFontSize,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,

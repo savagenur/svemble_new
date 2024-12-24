@@ -30,7 +30,7 @@ class _ProductTileState extends State<ProductTile> {
           SizedBox(
             width: double.infinity,
             child: AspectRatio(
-              aspectRatio: .8,
+              aspectRatio: 1,
               child: Stack(
                 children: [
                   Container(

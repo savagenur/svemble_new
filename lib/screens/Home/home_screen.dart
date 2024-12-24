@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             const Text(
               "Привет! 👋",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: kDefFontSize),
             ),
             Text(
               "Нурболот",
