@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:svemble_new/auth/Login/login_screen.dart';
-import 'package:svemble_new/auth/SignIn/signin_screen.dart';
-import 'package:svemble_new/auth/Signup/signup_screen.dart';
+import 'package:svemble_new/auth/views/Login/login_screen.dart';
+import 'package:svemble_new/auth/views/SignIn/signin_screen.dart';
+import 'package:svemble_new/auth/views/Signup/signup_screen.dart';
 import 'package:svemble_new/screens/AccountSetup/account_setup_screen.dart';
 import 'package:svemble_new/screens/Category/category_screen.dart';
 import 'package:svemble_new/screens/Checkout/checkout_screen.dart';

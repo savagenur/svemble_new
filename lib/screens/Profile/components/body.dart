@@ -7,7 +7,8 @@ import 'header_profile.dart';
 import 'leave_account_tile.dart';
 
 class Body extends StatelessWidget {
-  const Body({super.key});
+
+  const Body({super.key, });
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class Body extends StatelessWidget {
                     );
                   },
                 ),
-                const LeaveAccountTile(),
+                 LeaveAccountTile(),
               ],
             ),
           ),

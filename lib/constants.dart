@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:svemble_new/size_config.dart';
 
 const kPrimaryColor = Colors.black;
+const kPrimaryRedColor = Colors.red;
 const kPrimaryLightColor = Colors.black54;
 const kPrimaryGradientLightColor = LinearGradient(
   begin: Alignment.topCenter,

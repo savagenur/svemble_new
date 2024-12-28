@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:svemble_new/auth/Login/components/login_email_password_field.dart';
-import 'package:svemble_new/auth/Signup/signup_screen.dart';
+import 'package:svemble_new/auth/views/Login/components/login_email_password_field.dart';
+import 'package:svemble_new/auth/views/Signup/signup_screen.dart';
 import 'package:svemble_new/size_config.dart';
 
-import '../../../components/circle_small_btn.dart';
-import '../../../components/text_divider.dart';
-import '../../../constants.dart';
+import '../../../../components/circle_small_btn.dart';
+import '../../../../components/text_divider.dart';
+import '../../../../constants.dart';
 import '../../Signup/components/media_icons.dart';
 
 class Body extends StatelessWidget {
@@ -23,7 +23,7 @@ class Body extends StatelessWidget {
               height: SizeConfig.screenHeight * .05,
             ),
             Text(
-              "Логин",
+              "Login",
               style: h1TextStyle,
             ),
             SizedBox(
@@ -36,7 +36,7 @@ class Body extends StatelessWidget {
             TextButton(
                 onPressed: () {},
                 child: const Text(
-                  "Забыли пароль?",
+                  "Forget password?",
                   style: TextStyle(
                     fontSize: kDefFontSize,
                     decoration: TextDecoration.underline,
@@ -45,7 +45,7 @@ class Body extends StatelessWidget {
             SizedBox(
               height: getPropScreenWidth(30),
             ),
-            const TextDivider(text: "или продолжить с"),
+            const TextDivider(text: "or continue with "),
             SizedBox(
               height: getPropScreenWidth(40),
             ),
@@ -53,12 +53,12 @@ class Body extends StatelessWidget {
             SizedBox(
               height: getPropScreenWidth(40),
             ),
-            const TextDivider(text: "Нет аккаунта?"),
+            const TextDivider(text: "No account?"),
             SizedBox(
               height: getPropScreenWidth(10),
             ),
             CircleSmallBtn(
-              text: "Создать Svemble аккаунт",
+              text: "Create Svemble account",
               onTap: () {
                 Navigator.pushReplacementNamed(context, SignUpScreen.routeName);
               },

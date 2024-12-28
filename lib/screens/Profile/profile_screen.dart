@@ -6,13 +6,13 @@ import '../../size_config.dart';
 
 class ProfileScreen extends StatelessWidget {
   static const routeName = "/profile";
-  const ProfileScreen({super.key});
+  const ProfileScreen({super.key,  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: const Body(),
+      body:  Body(),
     );
   }
 

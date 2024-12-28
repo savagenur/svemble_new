@@ -1,23 +1,25 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../components/leave_account_sheet.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
-class LeaveAccountTile extends StatelessWidget {
-  const LeaveAccountTile({
-    Key? key,
-  }) : super(key: key);
+class LeaveAccountTile extends ConsumerWidget {
+
+  const LeaveAccountTile({super.key, 
+  });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ListTile(
       onTap: () {
         showModalBottomSheet(
             context: context,
 
             builder: (context) {
-              return const LeaveAccountSheet();
+              return  LeaveAccountSheet();
             });
       },
       minLeadingWidth: 0,
@@ -28,7 +30,7 @@ class LeaveAccountTile extends StatelessWidget {
         color: Colors.red,
       ),
       title: Text(
-        "Выйти из Аккаунта",
+        "Logout",
         style: defaultTextStyle.copyWith(color: Colors.red),
       ),
     );

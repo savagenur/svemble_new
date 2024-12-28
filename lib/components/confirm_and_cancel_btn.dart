@@ -8,8 +8,8 @@ class ConfirmAndCancelBtn extends StatelessWidget {
   final String confirmTitle;
   final VoidCallback onTap;
   const ConfirmAndCancelBtn({
-    Key? key, required this.confirmTitle, required this.onTap,
-  }) : super(key: key);
+    super.key, required this.confirmTitle, required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class ConfirmAndCancelBtn extends StatelessWidget {
       children: [
         Expanded(
           child: DefaultButton(
-            text: "Отмена",
+            text: "Cancel",
             onTap: () {
               Navigator.pop(context);
             },

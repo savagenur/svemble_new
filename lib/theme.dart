@@ -20,6 +20,7 @@ ThemeData theme() {
     bottomSheetTheme: bottomSheetTheme(),
     radioTheme: radioTheme(),
     
+    
     checkboxTheme: CheckboxThemeData(
       
       shape: RoundedRectangleBorder(
@@ -134,9 +135,11 @@ TextTheme textTheme() {
 
 InputDecorationTheme inputDecorationTheme() {
   return InputDecorationTheme(
+    
     isDense: false,
     fillColor: kSecondaryColor,
     filled: true,
+    
     contentPadding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(
