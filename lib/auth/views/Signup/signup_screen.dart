@@ -5,8 +5,8 @@ import 'package:svemble_new/auth/views/Signup/components/create_email_password_f
 import 'package:svemble_new/auth/views/Signup/components/media_icons.dart';
 import 'package:svemble_new/components/circle_small_btn.dart';
 import 'package:svemble_new/components/text_divider.dart';
-import 'package:svemble_new/constants.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/constants.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 
 class SignUpScreen extends StatelessWidget {

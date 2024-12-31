@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../constants.dart';
-import '../../../../size_config.dart';
+import '../../../../core/utils/constants.dart';
+import '../../../../core/utils/size_config.dart';
 
 class MediaIcons extends StatelessWidget {
   const MediaIcons({

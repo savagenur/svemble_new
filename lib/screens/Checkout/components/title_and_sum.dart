@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../core/utils/constants.dart';
 
 class TitleAndSum extends StatelessWidget {
   final String title;

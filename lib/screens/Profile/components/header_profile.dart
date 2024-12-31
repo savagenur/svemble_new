@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../components/profile_avatar_with_btn.dart';
-import '../../../constants.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/constants.dart';
+import '../../../core/utils/size_config.dart';
 
 class HeaderProfile extends StatelessWidget {
   const HeaderProfile({

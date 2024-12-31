@@ -3,8 +3,8 @@ import 'package:svemble_new/components/bottom_price_button.dart';
 import 'package:svemble_new/screens/Cart/components/body.dart';
 import 'package:svemble_new/screens/Checkout/checkout_screen.dart';
 
-import '../../constants.dart';
-import '../../size_config.dart';
+import '../../core/utils/constants.dart';
+import '../../core/utils/size_config.dart';
 
 class CartScreen extends StatelessWidget {
   static const routeName = "/cart";

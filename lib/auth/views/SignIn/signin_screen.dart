@@ -11,8 +11,8 @@ import 'package:svemble_new/core/utils/app_dialog.dart';
 import '../../../../components/circle_small_btn.dart';
 import '../../../../components/default_button.dart';
 import '../../../../components/text_divider.dart';
-import '../../../../constants.dart';
-import '../../../../size_config.dart';
+import '../../../core/utils/constants.dart';
+import '../../../core/utils/size_config.dart';
 
 class SignInScreen extends HookConsumerWidget {
   static const routeName = "/sign-in";

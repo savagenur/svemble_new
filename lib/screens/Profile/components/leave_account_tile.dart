@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../components/leave_account_sheet.dart';
-import '../../../constants.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/constants.dart';
+import '../../../core/utils/size_config.dart';
 
 class LeaveAccountTile extends ConsumerWidget {
 

@@ -5,19 +5,21 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:svemble_new/auth/viewmodels/auth/auth_state.dart';
 import 'package:svemble_new/auth/viewmodels/auth/auth_viewmodel.dart';
 import 'package:svemble_new/auth/views/SignIn/signin_screen.dart';
+import 'package:svemble_new/core/injection_container.dart';
 import 'package:svemble_new/core/utils/loader.dart';
 import 'package:svemble_new/firebase_options.dart';
-import 'package:svemble_new/routes.dart';
+import 'package:svemble_new/core/routes/routes.dart';
 import 'package:svemble_new/screens/Home/home_screen.dart';
 import 'package:svemble_new/screens/Main/main_screen.dart';
-import 'package:svemble_new/size_config.dart';
-import 'package:svemble_new/theme.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
+import 'package:svemble_new/core/theme/theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await initDependencies();
   runApp(ProviderScope(child: const SvembleNew()));
 }
 

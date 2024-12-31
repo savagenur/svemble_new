@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/components/small_text_bg.dart';
 import 'package:svemble_new/screens/Comments/comments_screen.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 import 'carousel_with_indicator_demo.dart';
 import 'color_list.dart';

@@ -10,8 +10,8 @@ import 'package:svemble_new/core/utils/app_dialog.dart';
 import 'package:svemble_new/core/widgets/primary_text_form_field.dart';
 
 import '../../../../components/default_button.dart';
-import '../../../../constants.dart';
-import '../../../../size_config.dart';
+import '../../../../core/utils/constants.dart';
+import '../../../../core/utils/size_config.dart';
 
 class LoginEmailPasswordField extends HookConsumerWidget {
   const LoginEmailPasswordField({

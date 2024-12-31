@@ -1,7 +1,7 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:svemble_new/constants.dart';
+import 'package:svemble_new/core/utils/constants.dart';
 
 class AppDialog {
   static void showSuccess(String msg, {Duration duration = const Duration(seconds: 2)}) {

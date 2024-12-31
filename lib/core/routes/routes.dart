@@ -24,8 +24,8 @@ import 'package:svemble_new/screens/SpecialOffer/special_offer_screen.dart';
 import 'package:svemble_new/screens/Splash/splash_screen.dart';
 import 'package:svemble_new/screens/Welcome/welcome_screen.dart';
 
-import 'screens/AddressProfile/address_profile_screen.dart';
-import 'screens/SearchHome/search_home_screen.dart';
+import '../../screens/AddressProfile/address_profile_screen.dart';
+import '../../screens/SearchHome/search_home_screen.dart';
 
 class AppRoute {
   Route onGenerateRoute(RouteSettings routeSettings) {

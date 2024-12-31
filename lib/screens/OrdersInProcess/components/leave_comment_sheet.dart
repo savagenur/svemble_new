@@ -3,8 +3,8 @@ import 'package:svemble_new/components/confirm_and_cancel_btn.dart';
 import 'package:svemble_new/screens/OrdersInProcess/components/order_tile.dart';
 
 import '../../../components/linear_oval_staff.dart';
-import '../../../constants.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/constants.dart';
+import '../../../core/utils/size_config.dart';
 
 class LeaveCommentSheet extends StatelessWidget {
   const LeaveCommentSheet({

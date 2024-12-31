@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
-import '../size_config.dart';
+import '../core/utils/constants.dart';
+import '../core/utils/size_config.dart';
 import '../screens/Cart/components/remove_bottom_sheet.dart';
 import '../screens/Cart/components/small_remove_and_add_btn.dart';
 

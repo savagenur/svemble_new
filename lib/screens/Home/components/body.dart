@@ -3,7 +3,7 @@ import 'package:svemble_new/screens/Home/components/product_tile_list.dart';
 import 'package:svemble_new/screens/Home/components/search_text_field.dart';
 import 'package:svemble_new/screens/Popular/popular_screen.dart';
 import 'package:svemble_new/screens/SpecialOffer/special_offer_screen.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 import 'categories.dart';
 import '../../../components/category_row_items.dart';

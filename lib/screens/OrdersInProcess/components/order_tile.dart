@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/constants.dart';
+import '../../../core/utils/size_config.dart';
 import 'color_size_amount.dart';
 import 'footer.dart';
 import 'order_status.dart';

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/screens/Category/category_screen.dart';
 
-import '../../../constants.dart';
+import '../../../core/utils/constants.dart';
 import '../../../data/categories.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/size_config.dart';
 
 class Categories extends StatelessWidget {
   const Categories({

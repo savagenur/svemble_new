@@ -4,13 +4,13 @@ import 'package:svemble_new/auth/viewmodels/auth/auth_state.dart';
 import 'package:svemble_new/auth/viewmodels/auth/auth_viewmodel.dart';
 import 'package:svemble_new/auth/views/SignIn/signin_screen.dart';
 import 'package:svemble_new/components/default_button.dart';
-import 'package:svemble_new/constants.dart';
+import 'package:svemble_new/core/utils/constants.dart';
 import 'package:svemble_new/core/utils/utils.dart';
 import 'package:svemble_new/screens/Cart/cart_screen.dart';
 import 'package:svemble_new/screens/Home/home_screen.dart';
 import 'package:svemble_new/screens/Orders/orders_screen.dart';
 import 'package:svemble_new/screens/Profile/profile_screen.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
   static const routeName = "/main";
@@ -87,7 +87,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
             });
 
             if (value != 0) {
-              signInDialog(context);
+              showSignInDialog(context);
             }
           }
         },

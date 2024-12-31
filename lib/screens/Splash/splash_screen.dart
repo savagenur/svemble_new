@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/screens/Welcome/welcome_screen.dart';
 
-import '../../constants.dart';
-import '../../size_config.dart';
+import '../../core/utils/constants.dart';
+import '../../core/utils/size_config.dart';
 
 class SplashScreen extends StatelessWidget {
   static const routeName = "/";

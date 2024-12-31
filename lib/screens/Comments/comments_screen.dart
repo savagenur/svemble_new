@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:svemble_new/constants.dart';
+import 'package:svemble_new/core/utils/constants.dart';
 import 'package:svemble_new/screens/Comments/components/body.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 class CommentsScreen extends StatelessWidget {
   static const routeName = "/comments";

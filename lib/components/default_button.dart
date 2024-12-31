@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:svemble_new/constants.dart';
+import 'package:svemble_new/core/utils/constants.dart';
 
-import '../size_config.dart';
+import '../core/utils/size_config.dart';
 
 class DefaultButton extends StatelessWidget {
   final String text;

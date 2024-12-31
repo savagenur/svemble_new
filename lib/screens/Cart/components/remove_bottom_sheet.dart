@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:svemble_new/components/confirm_and_cancel_btn.dart';
 
 import '../../../components/linear_oval_staff.dart';
-import '../../../constants.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/constants.dart';
+import '../../../core/utils/size_config.dart';
 import '../../../components/cart_tile.dart';
 
 class RemoveBottomSheet extends StatelessWidget {

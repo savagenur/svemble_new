@@ -1,9 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../core/utils/constants.dart';
 import '../../../data/products.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/size_config.dart';
 
 class CarouselWithIndicatorDemo extends StatefulWidget {
   const CarouselWithIndicatorDemo({super.key});

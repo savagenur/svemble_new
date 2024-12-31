@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../components/circle_small_btn.dart';
-import '../../../constants.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/constants.dart';
+import '../../../core/utils/size_config.dart';
 
 class InviteFriendTile extends StatelessWidget {
   final String title;

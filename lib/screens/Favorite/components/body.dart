@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/components/category_row_items.dart';
 import 'package:svemble_new/screens/Home/components/product_tile_list.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});

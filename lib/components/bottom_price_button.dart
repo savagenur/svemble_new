@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'default_button.dart';
-import '../constants.dart';
-import '../size_config.dart';
+import '../core/utils/constants.dart';
+import '../core/utils/size_config.dart';
 
 class BottomPriceButton extends StatelessWidget {
   final String buttonText;

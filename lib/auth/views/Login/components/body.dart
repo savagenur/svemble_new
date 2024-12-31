@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/auth/views/Login/components/login_email_password_field.dart';
 import 'package:svemble_new/auth/views/Signup/signup_screen.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 import '../../../../components/circle_small_btn.dart';
 import '../../../../components/text_divider.dart';
-import '../../../../constants.dart';
+import '../../../../core/utils/constants.dart';
 import '../../Signup/components/media_icons.dart';
 
 class Body extends StatelessWidget {

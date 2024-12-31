@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:svemble_new/constants.dart';
+import 'package:svemble_new/core/utils/constants.dart';
 import 'package:svemble_new/screens/AddressProfile/components/body.dart';
 
 import '../../components/check_tile.dart';
 import '../../components/confirm_and_cancel_btn.dart';
 import '../../components/default_button.dart';
 import '../../components/linear_oval_staff.dart';
-import '../../size_config.dart';
+import '../../core/utils/size_config.dart';
 
 class AddressProfileScreen extends StatelessWidget {
   static const routeName = "/address-profile";

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../core/utils/constants.dart';
 import '../data/categories.dart';
-import '../size_config.dart';
+import '../core/utils/size_config.dart';
 
 class CategoryRowItems extends StatefulWidget {
   const CategoryRowItems({

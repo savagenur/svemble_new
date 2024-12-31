@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/screens/DetailProduct/detail_product_screen.dart';
 
-import '../constants.dart';
+import '../core/utils/constants.dart';
 import '../models/product.dart';
-import '../size_config.dart';
+import '../core/utils/size_config.dart';
 import 'small_text_bg.dart';
 
 class ProductTile extends StatefulWidget {

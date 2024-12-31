@@ -8,8 +8,8 @@ import 'package:svemble_new/screens/AccountSetup/account_setup_screen.dart';
 
 import '../../../../components/check_tile.dart';
 import '../../../../components/default_button.dart';
-import '../../../../constants.dart';
-import '../../../../size_config.dart';
+import '../../../../core/utils/constants.dart';
+import '../../../../core/utils/size_config.dart';
 
 class CreateEmailPasswordField extends HookConsumerWidget {
   const CreateEmailPasswordField({

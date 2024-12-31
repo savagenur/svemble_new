@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/components/default_button.dart';
 import 'package:svemble_new/screens/Main/main_screen.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 import '../../../components/profile_avatar_with_btn.dart';
 

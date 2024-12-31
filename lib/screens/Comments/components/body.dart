@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/screens/SearchHome/components/rating_row_items.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 import 'comment_tile.dart';
 

@@ -6,8 +6,8 @@ import 'package:syncfusion_flutter_sliders/sliders.dart';
 import '../../../components/category_row_items.dart';
 import '../../../components/default_button.dart';
 import '../../../components/linear_oval_staff.dart';
-import '../../../constants.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/constants.dart';
+import '../../../core/utils/size_config.dart';
 import 'rating_row_items.dart';
 import 'sort_by_items.dart';
 

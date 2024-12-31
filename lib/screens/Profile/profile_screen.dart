@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:svemble_new/constants.dart';
+import 'package:svemble_new/core/utils/constants.dart';
 import 'package:svemble_new/screens/Profile/components/body.dart';
 
-import '../../size_config.dart';
+import '../../core/utils/size_config.dart';
 
 class ProfileScreen extends StatelessWidget {
   static const routeName = "/profile";

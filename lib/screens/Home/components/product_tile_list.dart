@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../components/product_tile.dart';
 import '../../../data/products.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/size_config.dart';
 
 class ProductTileList extends StatelessWidget {
   const ProductTileList({

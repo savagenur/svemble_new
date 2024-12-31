@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/screens/SearchHome/search_home_screen.dart';
 
-import '../../../size_config.dart';
+import '../../../core/utils/size_config.dart';
 
 class SearchTextField extends StatelessWidget {
   const SearchTextField({

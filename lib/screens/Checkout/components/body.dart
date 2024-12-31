@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/components/cart_tile.dart';
-import 'package:svemble_new/constants.dart';
+import 'package:svemble_new/core/utils/constants.dart';
 import 'package:svemble_new/screens/ChooseShipping/choose_shipping_screen.dart';
 import 'package:svemble_new/screens/ShippingAddress/shipping_address_screen.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 import '../../../components/address_tile.dart';
 import 'result_sum_container.dart';

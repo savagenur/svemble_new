@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:svemble_new/constants.dart';
+import 'package:svemble_new/core/utils/constants.dart';
 import 'package:svemble_new/screens/InviteFriends/components/body.dart';
 
 class InviteFriendsScreen extends StatelessWidget {

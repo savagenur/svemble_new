@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:svemble_new/constants.dart';
+import 'package:svemble_new/core/utils/constants.dart';
 import 'package:svemble_new/screens/EditProfile/components/body.dart';
 
 import '../../components/default_button.dart';
-import '../../size_config.dart';
+import '../../core/utils/size_config.dart';
 
 class EditProfileScreen extends StatelessWidget {
   static const routeName = "/edit-profile";

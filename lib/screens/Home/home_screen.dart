@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:svemble_new/auth/viewmodels/auth/auth_state.dart';
 import 'package:svemble_new/auth/viewmodels/auth/auth_viewmodel.dart';
 import 'package:svemble_new/auth/views/SignIn/signin_screen.dart';
-import 'package:svemble_new/constants.dart';
+import 'package:svemble_new/core/utils/constants.dart';
+import 'package:svemble_new/core/utils/utils.dart';
 import 'package:svemble_new/screens/Favorite/favorite_screen.dart';
 import 'package:svemble_new/screens/Home/components/body.dart';
 import 'package:svemble_new/screens/Notification/notification_screen.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 class HomeScreen extends ConsumerWidget {
   static const routeName = "/home";
@@ -30,9 +32,13 @@ class HomeScreen extends ConsumerWidget {
             bottom: getPropScreenWidth(5),
             top: getPropScreenWidth(5)),
         child: GestureDetector(
-          onTap: () => authViewModel.user == null
-              ? Navigator.pushNamed(context, SignInScreen.routeName)
-              : null,
+          onTap: () {
+            if (authViewModel.eventState is Authenticated) {
+              Navigator.pushNamed(context, SignInScreen.routeName);
+            } else {
+              showSignInDialog(context);
+            }
+          },
           child: const CircleAvatar(
             backgroundColor: kSecondaryColor,
             child: Icon(

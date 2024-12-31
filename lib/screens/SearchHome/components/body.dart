@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/data/search_history.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 import 'bottom_filter_sheet.dart';
 import 'recent_and_clear_all.dart';

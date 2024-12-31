@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:svemble_new/components/small_text_bg.dart';
 
-import '../constants.dart';
-import '../size_config.dart';
+import '../core/utils/constants.dart';
+import '../core/utils/size_config.dart';
 
 class AddressTile extends StatelessWidget {
   final String title;

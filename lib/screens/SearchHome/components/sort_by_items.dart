@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../core/utils/constants.dart';
 import '../../../data/sorts_by.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/size_config.dart';
 
 class SortByRowItems extends StatefulWidget {
   const SortByRowItems({

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:svemble_new/size_config.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});

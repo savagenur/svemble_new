@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
-import '../../../size_config.dart';
+import '../../../core/utils/constants.dart';
+import '../../../core/utils/size_config.dart';
 
 class SmallRemoveAndAddBtn extends StatelessWidget {
   const SmallRemoveAndAddBtn({
