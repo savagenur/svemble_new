@@ -1,7 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:svemble_new/components/small_text_bg.dart';
-import 'package:svemble_new/screens/Comments/comments_screen.dart';
 import 'package:svemble_new/core/utils/size_config.dart';
+import 'package:svemble_new/product/models/product_model.dart';
+import 'package:svemble_new/screens/Comments/comments_screen.dart';
 
 import 'carousel_with_indicator_demo.dart';
 import 'color_list.dart';
@@ -11,8 +14,13 @@ import 'small_title.dart';
 import 'title_and_favorite_btn.dart';
 
 class Body extends StatelessWidget {
+  final ProductModel product;
   final bool hasSize;
-  const Body({super.key, this.hasSize = false});
+  const Body({
+    super.key,
+    required this.product,
+    required this.hasSize,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +29,10 @@ class Body extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const AspectRatio(
-                aspectRatio: 1, child: CarouselWithIndicatorDemo()),
+             AspectRatio(
+                aspectRatio: 1, child: CarouselWithIndicatorDemo(
+                  product: product,
+                )),
             SizedBox(
               width: double.infinity,
               child: Padding(

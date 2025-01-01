@@ -76,3 +76,7 @@ OutlineInputBorder outlineInputBorder() {
     borderSide: const BorderSide(color: kTextColor),
   );
 }
+
+class AppUrls{
+static const String baseUrl = 'https://dummyjson.com';
+}

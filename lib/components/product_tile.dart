@@ -1,17 +1,18 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:svemble_new/screens/DetailProduct/detail_product_screen.dart';
 
 import '../core/utils/constants.dart';
-import '../models/product.dart';
+import '../product/models/product_model.dart';
 import '../core/utils/size_config.dart';
 import 'small_text_bg.dart';
 
 class ProductTile extends StatefulWidget {
-  final Product product;
+  final ProductModel product;
   const ProductTile({
-    Key? key,
+    super.key,
     required this.product,
-  }) : super(key: key);
+  });
 
   @override
   State<ProductTile> createState() => _ProductTileState();
@@ -22,7 +23,13 @@ class _ProductTileState extends State<ProductTile> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, DetailProductScreen.routeName);
+        Navigator.pushNamed(
+          context,
+          DetailProductScreen.routeName,
+          arguments: DetailProductArguments(
+            product: widget.product,
+          ),
+        );
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,15 +43,25 @@ class _ProductTileState extends State<ProductTile> {
                   Container(
                     width: double.infinity,
                     height: double.infinity,
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(
                         getPropScreenWidth(20),
                       ),
                       color: kSecondaryColor,
                     ),
-                    child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Image.asset(widget.product.image)),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                        getPropScreenWidth(20),
+                      ), // Ensures the image respects the border radius
+                      child: widget.product.images?[0] != null
+                          ? CachedNetworkImage(
+                              imageUrl: widget.product.images![0],
+                              fit: BoxFit
+                                  .cover, // Ensures the image covers the entire container
+                            )
+                          : const SizedBox(), // Empty widget as fallback
+                    ),
                   ),
                   Positioned(
                     right: getPropScreenWidth(15),
@@ -53,18 +70,13 @@ class _ProductTileState extends State<ProductTile> {
                       borderRadius:
                           BorderRadius.circular(getPropScreenWidth(15)),
                       onTap: () {
-                        setState(() {
-                          widget.product.isFavorite =
-                              !widget.product.isFavorite;
-                        });
+                        setState(() {});
                       },
                       child: CircleAvatar(
                         radius: getPropScreenWidth(15),
                         backgroundColor: kPrimaryColor,
                         child: Icon(
-                          widget.product.isFavorite
-                              ? Icons.favorite
-                              : Icons.favorite_border,
+                          Icons.favorite,
                           color: Colors.white,
                           size: getPropScreenWidth(18),
                         ),
@@ -95,7 +107,7 @@ class _ProductTileState extends State<ProductTile> {
                 width: getPropScreenWidth(5),
               ),
               Text("${widget.product.rating}  |  "),
-              SmallTextBg(text: "${widget.product.soldCount} продано"),
+              SmallTextBg(text: "${widget.product.stock} продано"),
             ],
           ),
           SizedBox(

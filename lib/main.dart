@@ -5,7 +5,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:svemble_new/auth/viewmodels/auth/auth_state.dart';
 import 'package:svemble_new/auth/viewmodels/auth/auth_viewmodel.dart';
 import 'package:svemble_new/auth/views/SignIn/signin_screen.dart';
-import 'package:svemble_new/core/injection_container.dart';
+import 'package:svemble_new/injection_container.dart';
 import 'package:svemble_new/core/utils/loader.dart';
 import 'package:svemble_new/firebase_options.dart';
 import 'package:svemble_new/core/routes/routes.dart';

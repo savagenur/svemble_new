@@ -4,13 +4,14 @@ import 'package:svemble_new/auth/models/user/user_model.dart';
 import 'package:svemble_new/auth/repos/auth_repo.dart';
 import 'package:svemble_new/auth/viewmodels/auth/auth_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:svemble_new/injection_container.dart';
 import 'package:svemble_new/main.dart';
 import 'package:svemble_new/screens/Main/main_screen.dart';
 part 'auth_viewmodel.g.dart';
 
 @riverpod
 class AuthViewmodel extends _$AuthViewmodel {
-  final _authRepo = AuthRepo();
+  final _authRepo = sl<AuthRepo>();
   @override
   AuthState build() {
     if (_authRepo.isAuthenticated) {
@@ -18,7 +19,7 @@ class AuthViewmodel extends _$AuthViewmodel {
         user: UserModel(
           userId: _authRepo.currentUser?.uid,
           email: _authRepo.currentUser?.email,
-          username: _authRepo.currentUser?.displayName ?? "No name",
+          username: "Unknown",
         ),
         eventState: Authenticated(),
       );

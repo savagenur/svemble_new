@@ -1,42 +1,42 @@
-import '../models/product.dart';
+import '../product/models/product_model.dart';
 
-final List<Product> allProducts = [
-  Product(
+final List<ProductMock> allProducts = [
+  ProductMock(
     title: "Кожаная обувь",
     rating: 4.8,
     soldCount: 8354,
     price: 6394,
     image: "assets/images/6-brown-men-shoes-png-image.png",
   ),
-  Product(
+  ProductMock(
     title: "Брендовые наушники",
     rating: 4.4,
     soldCount: 433,
     price: 641,
     image: "assets/images/10-headphones-png-image.png",
   ),
-  Product(
+  ProductMock(
     title: "Тёплая куртка",
     rating: 4.2,
     soldCount: 5400,
     price: 4980,
     image: "assets/images/28-jacket-png-image.png",
   ),
-  Product(
+  ProductMock(
     title: "Сумка для перевозки",
     rating: 4.9,
     soldCount: 3200,
     price: 2084,
     image: "assets/images/67498-fashion-leather-bag-black-handbag-chanel.png",
   ),
-  Product(
+  ProductMock(
     title: "Игрушка миньон",
     rating: 4.1,
     soldCount: 1305,
     price: 3021,
     image: "assets/images/87264-toy-youtube-nefario-stuffed-dr-minions.png",
   ),
-  Product(
+  ProductMock(
     title: "Клавиатура Yamaha",
     rating: 5.0,
     soldCount: 30000,

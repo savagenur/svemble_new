@@ -29,7 +29,7 @@ import '../../screens/SearchHome/search_home_screen.dart';
 
 class AppRoute {
   Route onGenerateRoute(RouteSettings routeSettings) {
-    // dynamic arguments = routeSettings.arguments;
+    dynamic arguments = routeSettings.arguments;
     switch (routeSettings.name) {
       case SplashScreen.routeName:
         return PageTransition(
@@ -116,9 +116,12 @@ class AppRoute {
           type: PageTransitionType.rightToLeft,
         );
       case DetailProductScreen.routeName:
+        final args = arguments as DetailProductArguments;
         return PageTransition(
           settings: const RouteSettings(name: DetailProductScreen.routeName),
-          child: const DetailProductScreen(),
+          child:  DetailProductScreen(
+            product: args.product,
+          ),
           type: PageTransitionType.rightToLeft,
         );
       case CommentsScreen.routeName:

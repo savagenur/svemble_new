@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:svemble_new/core/utils/loader.dart';
+import 'package:svemble_new/product/viewmodel/product_state.dart';
+import 'package:svemble_new/product/viewmodel/product_viewmodel.dart';
 
 import '../core/utils/constants.dart';
-import '../data/categories.dart';
 import '../core/utils/size_config.dart';
 
-class CategoryRowItems extends StatefulWidget {
+class CategoryRowItems extends ConsumerStatefulWidget {
   const CategoryRowItems({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
-  State<CategoryRowItems> createState() => _CategoryRowItemsState();
+  ConsumerState<CategoryRowItems> createState() => _CategoryRowItemsState();
 }
 
-class _CategoryRowItemsState extends State<CategoryRowItems> {
+class _CategoryRowItemsState extends ConsumerState<CategoryRowItems> {
   int currentIndex = -1;
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    final productViewmodel = ref.watch(productViewmodelProvider);
+    switch (productViewmodel.categoryListEventState) {
+      case CategoryListEventState.success:
+     
+        return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
@@ -26,7 +33,7 @@ class _CategoryRowItemsState extends State<CategoryRowItems> {
           ),
           CategoryRowItem(
             isSelected: currentIndex == -1,
-            title: "Все",
+            title: "All",
             onTap: () {
               setState(() {
                 currentIndex = -1;
@@ -34,11 +41,13 @@ class _CategoryRowItemsState extends State<CategoryRowItems> {
             },
           ),
           ...List.generate(
-            allCategoryTitles.length,
+            productViewmodel.categoryList.length,
             (index) {
+              final category = productViewmodel.categoryList[index];
+
               return CategoryRowItem(
                 isSelected: currentIndex == index,
-                title: allCategoryTitles[index],
+                title: category.name ?? "",
                 onTap: () {
                   setState(() {
                     currentIndex = index;
@@ -50,6 +59,19 @@ class _CategoryRowItemsState extends State<CategoryRowItems> {
         ],
       ),
     );
+      case CategoryListEventState.loading:
+        return Loader();
+
+      case CategoryListEventState.failure:
+        return Center(
+          child: Text(
+            productViewmodel.categoryListErrorMessage ?? "Error",
+          ),
+        );
+      default:
+        return Loader();
+    }
+    
   }
 }
 
@@ -58,11 +80,11 @@ class CategoryRowItem extends StatelessWidget {
   final VoidCallback onTap;
   final bool isSelected;
   const CategoryRowItem({
-    Key? key,
+    super.key,
     required this.title,
     required this.onTap,
     required this.isSelected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

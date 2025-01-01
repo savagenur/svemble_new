@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:svemble_new/core/utils/size_config.dart';
+import 'package:svemble_new/product/viewmodel/product_viewmodel.dart';
 import 'package:svemble_new/screens/Home/components/product_tile_list.dart';
 import 'package:svemble_new/screens/Home/components/search_text_field.dart';
 import 'package:svemble_new/screens/Popular/popular_screen.dart';
 import 'package:svemble_new/screens/SpecialOffer/special_offer_screen.dart';
-import 'package:svemble_new/core/utils/size_config.dart';
 
-import 'categories.dart';
 import '../../../components/category_row_items.dart';
-import 'offer_and_more_btn.dart';
 import '../../../components/offer_images.dart';
+import 'category_list_view.dart';
+import 'offer_and_more_btn.dart';
 
-class Body extends StatelessWidget {
+class Body extends HookConsumerWidget {
   const Body({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final productViewmodel = ref.watch(productViewmodelProvider);
+    final productNotifier = ref.read(productViewmodelProvider.notifier);
+    useEffect(() {
+      WidgetsBinding.instance.addPostFrameCallback(
+        (timeStamp) {
+          productNotifier.getProducts();
+        },
+      );
+      return null;
+    }, []);
     return SizedBox(
       width: double.infinity,
       child: SingleChildScrollView(
@@ -43,7 +56,7 @@ class Body extends StatelessWidget {
             SizedBox(
               height: getPropScreenWidth(20),
             ),
-            const Categories(),
+            const CategoryListView(),
             SizedBox(
               height: getPropScreenWidth(10),
             ),
