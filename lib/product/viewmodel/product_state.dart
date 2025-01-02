@@ -8,6 +8,7 @@ part 'product_state.freezed.dart';
 class ProductState with _$ProductState {
   factory  ProductState({
     final ProductModel? product,
+    final CategoryModel? category,
     @Default([]) final List<ProductModel> productList,
     @Default([]) final List<CategoryModel> categoryList,
     @Default(ProductEventState.initial)

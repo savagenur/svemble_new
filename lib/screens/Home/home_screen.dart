@@ -35,9 +35,7 @@ class HomeScreen extends ConsumerWidget {
             top: getPropScreenWidth(5)),
         child: GestureDetector(
           onTap: () {
-            if (authViewModel.eventState is Authenticated) {
-              Navigator.pushNamed(context, SignInScreen.routeName);
-            } else {
+            if (authViewModel.eventState is Unauthenticated) {
               showSignInDialog(context);
             }
           },

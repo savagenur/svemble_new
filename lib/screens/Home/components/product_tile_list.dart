@@ -6,7 +6,6 @@ import 'package:svemble_new/product/viewmodel/product_state.dart';
 import 'package:svemble_new/product/viewmodel/product_viewmodel.dart';
 
 import '../../../components/product_tile.dart';
-import '../../../data/products.dart';
 import '../../../core/utils/size_config.dart';
 
 class ProductTileList extends HookConsumerWidget {
@@ -44,19 +43,17 @@ class ProductTileList extends HookConsumerWidget {
             );
           },
         );
-      case ProductListEventState.loading:
-        return Loader();
 
       case ProductListEventState.failure:
-        return Scaffold(
-          body: Center(
-            child: Text(
-              productViewmodel.productListErrorMessage ?? "Error",
-            ),
+        return Center(
+          child: Text(
+            productViewmodel.productListErrorMessage ?? "Error",
           ),
         );
       default:
-        return Loader();
+        return SizedBox(
+          height: SizeConfig.screenHeight*.8,
+          child: Loader());
     }
   }
 }

@@ -7,7 +7,7 @@ import '../utils/constants.dart';
 ThemeData theme() {
   return ThemeData(
     iconTheme: iconTheme(),
-    primarySwatch: black,
+    colorSchemeSeed: Colors.blue,
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: appBarTheme(),
     inputDecorationTheme: inputDecorationTheme(),

@@ -17,48 +17,57 @@ class CategoryRowItems extends ConsumerStatefulWidget {
 }
 
 class _CategoryRowItemsState extends ConsumerState<CategoryRowItems> {
-  int currentIndex = -1;
   @override
   Widget build(BuildContext context) {
     final productViewmodel = ref.watch(productViewmodelProvider);
+    final productNotifier = ref.read(productViewmodelProvider.notifier);
     switch (productViewmodel.categoryListEventState) {
       case CategoryListEventState.success:
-     
+        final category = productViewmodel.category;
         return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          SizedBox(
-            width: getPropScreenWidth(20),
-          ),
-          CategoryRowItem(
-            isSelected: currentIndex == -1,
-            title: "All",
-            onTap: () {
-              setState(() {
-                currentIndex = -1;
-              });
-            },
-          ),
-          ...List.generate(
-            productViewmodel.categoryList.length,
-            (index) {
-              final category = productViewmodel.categoryList[index];
-
-              return CategoryRowItem(
-                isSelected: currentIndex == index,
-                title: category.name ?? "",
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              SizedBox(
+                width: getPropScreenWidth(20),
+              ),
+              CategoryRowItem(
+                isSelected: category == null,
+                title: "All",
                 onTap: () {
                   setState(() {
-                    currentIndex = index;
+                    if (category != null) {
+                      productNotifier
+                        ..setCategory(category: null)
+                        ..getProducts();
+                    }
                   });
                 },
-              );
-            },
-          )
-        ],
-      ),
-    );
+              ),
+              ...List.generate(
+                productViewmodel.categoryList.length,
+                (index) {
+                  final categoryItem = productViewmodel.categoryList[index];
+
+                  return CategoryRowItem(
+                    isSelected: category == categoryItem,
+                    title: categoryItem.name ?? "",
+                    onTap: () {
+                      if (category != categoryItem) {
+                        setState(() {
+                          productNotifier
+                            ..setCategory(category: categoryItem)
+                            ..getProductsByCategory(
+                                categoryQuery: categoryItem.slug!);
+                        });
+                      }
+                    },
+                  );
+                },
+              )
+            ],
+          ),
+        );
       case CategoryListEventState.loading:
         return Loader();
 
@@ -71,7 +80,6 @@ class _CategoryRowItemsState extends ConsumerState<CategoryRowItems> {
       default:
         return Loader();
     }
-    
   }
 }
 

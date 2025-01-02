@@ -24,19 +24,19 @@ class CategoryListView extends HookConsumerWidget {
     useEffect(() {
       WidgetsBinding.instance.addPostFrameCallback(
         (timeStamp) {
-          productNotifier.getAllCategories();
+          productNotifier.getCategories();
         },
       );
       return null;
     }, []);
     switch (productViewmodel.categoryListEventState) {
       case CategoryListEventState.success:
-      final double height;
-            if (MediaQuery.sizeOf(context).width > 600) {
-              height = 300;
-            } else {
-              height = 240;
-            }
+        final double height;
+        if (MediaQuery.sizeOf(context).width > 600) {
+          height = 300;
+        } else {
+          height = 240;
+        }
         return SizedBox(
           height: height,
           child: GridView.builder(
@@ -52,6 +52,11 @@ class CategoryListView extends HookConsumerWidget {
                 title: category.name ?? "",
                 iconImg: allIconImgs[0],
                 onTap: () {
+                  productNotifier
+                    ..setCategory(category: category)
+                    ..getProductsByCategory(
+                      categoryQuery: category.slug!,
+                    );
                   Navigator.pushNamed(context, CategoryScreen.routeName);
                 },
               );
@@ -86,32 +91,27 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        print(constraints);
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            InkWell(
-              borderRadius: BorderRadius.circular(getPropScreenWidth(30)),
-              onTap: onTap,
-              child: CircleAvatar(
-                radius: getPropScreenWidth(30),
-                backgroundColor: kSecondaryColor,
-                child: Icon(Icons.category),
-              ),
-            ),
-            SizedBox(
-              height: getPropScreenWidth(5),
-            ),
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: tertiaryBoldTextStyle,
-            ),
-          ],
-        );
-      },
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        InkWell(
+          borderRadius: BorderRadius.circular(getPropScreenWidth(30)),
+          onTap: onTap,
+          child: CircleAvatar(
+            radius: getPropScreenWidth(30),
+            backgroundColor: kSecondaryColor,
+            child: Icon(Icons.category),
+          ),
+        ),
+        SizedBox(
+          height: getPropScreenWidth(5),
+        ),
+        Text(
+          title,
+          textAlign: TextAlign.center,
+          style: tertiaryBoldTextStyle,
+        ),
+      ],
     );
   }
 }

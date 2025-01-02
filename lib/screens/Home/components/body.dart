@@ -43,7 +43,7 @@ class Body extends HookConsumerWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: getPropScreenWidth(20)),
               child: OfferAndMoreBtn(
-                title: "Особые Акции",
+                title: "Special sales",
                 onTap: () {
                   Navigator.pushNamed(context, SpecialOfferScreen.routeName);
                 },
@@ -63,7 +63,7 @@ class Body extends HookConsumerWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: getPropScreenWidth(20)),
               child: OfferAndMoreBtn(
-                title: "Самые Популярные",
+                title: "Most popular",
                 onTap: () {
                   Navigator.pushNamed(context, PopularScreen.routeName);
                 },

@@ -8,17 +8,15 @@ class DioSettings {
       contentType: 'application/json',
     ));
     dio.interceptors.addAll([
-      LogInterceptor(
-        request: true,
-        error: true,
-        requestHeader: true,
-        requestBody: true,
-        responseBody: true,
-        responseHeader: false,
-      )
-      ,InterceptorsWrapper(
-        
-      )
+      // LogInterceptor(
+      //   request: true,
+      //   error: true,
+      //   requestHeader: true,
+      //   requestBody: true,
+      //   responseBody: true,
+      //   responseHeader: false,
+      // ),
+      InterceptorsWrapper()
     ]);
     return dio;
   }

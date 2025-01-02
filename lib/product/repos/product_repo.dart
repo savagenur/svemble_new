@@ -29,7 +29,7 @@ class ProductRepo {
     }
   }
 
-  Future<Either<AppFailure, List<CategoryModel>>> getAllCategories() async {
+  Future<Either<AppFailure, List<CategoryModel>>> getCategories() async {
     try {
       final res = await dio.get(
         'https://dummyjson.com/products/categories',
@@ -41,6 +41,24 @@ class ProductRepo {
         },
       ).toList();
       return Right(categories);
+    } catch (e) {
+      return Left(AppFailure(e.toString()));
+    }
+  }
+
+  Future<Either<AppFailure, List<ProductModel>>> getProductsByCategory(
+      {required String categoryQuery}) async {
+    try {
+      final res = await dio.get(
+        'https://dummyjson.com/products/category/$categoryQuery',
+      );
+      final products = (res.data["products"] as List).map(
+        (json) {
+          final product = ProductModel.fromJson(json as Map<String, dynamic>);
+          return product;
+        },
+      ).toList();
+      return Right(products);
     } catch (e) {
       return Left(AppFailure(e.toString()));
     }
