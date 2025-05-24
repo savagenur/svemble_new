@@ -20,20 +20,19 @@ class ProductViewmodel extends _$ProductViewmodel {
   /// Fetch all products and update the state
   Future<void> getProducts() async {
     // Set loading state
-    state =
-        state.copyWith(productListEventState: ProductListEventState.loading);
+    state = state.copyWith(productListStatus: ProductListStatus.loading);
 
     final result = await _productRepo.getProducts();
 
     state = result.fold(
       // Handle failure
       (failure) => state.copyWith(
-        productListEventState: ProductListEventState.failure,
+        productListStatus: ProductListStatus.failure,
         productListErrorMessage: failure.message,
       ),
       // Handle success
       (products) => state.copyWith(
-        productListEventState: ProductListEventState.success,
+        productListStatus: ProductListStatus.success,
         productList: products,
       ),
     );
@@ -41,8 +40,7 @@ class ProductViewmodel extends _$ProductViewmodel {
 
   Future<void> getProductsByCategory({required String categoryQuery}) async {
     // Set loading state
-    state =
-        state.copyWith(productListEventState: ProductListEventState.loading);
+    state = state.copyWith(productListStatus: ProductListStatus.loading);
 
     final result = await _productRepo.getProductsByCategory(
       categoryQuery: categoryQuery,
@@ -51,12 +49,12 @@ class ProductViewmodel extends _$ProductViewmodel {
     state = result.fold(
       // Handle failure
       (failure) => state.copyWith(
-        productListEventState: ProductListEventState.failure,
+        productListStatus: ProductListStatus.failure,
         productListErrorMessage: failure.message,
       ),
       // Handle success
       (products) => state.copyWith(
-        productListEventState: ProductListEventState.success,
+        productListStatus: ProductListStatus.success,
         productList: products,
       ),
     );
@@ -64,20 +62,19 @@ class ProductViewmodel extends _$ProductViewmodel {
 
   Future<void> getCategories() async {
     // Set loading state
-    state =
-        state.copyWith(categoryListEventState: CategoryListEventState.loading);
+    state = state.copyWith(categoryListStatus: CategoryListStatus.loading);
 
     final result = await _productRepo.getCategories();
 
     state = result.fold(
       // Handle failure
       (failure) => state.copyWith(
-        categoryListEventState: CategoryListEventState.failure,
+        categoryListStatus: CategoryListStatus.failure,
         categoryListErrorMessage: failure.message,
       ),
       // Handle success
       (products) => state.copyWith(
-        categoryListEventState: CategoryListEventState.success,
+        categoryListStatus: CategoryListStatus.success,
         categoryList: products,
       ),
     );

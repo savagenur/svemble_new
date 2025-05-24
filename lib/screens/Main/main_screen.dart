@@ -75,7 +75,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
         onTap: (value) {
-          final authState = ref.watch(authViewmodelProvider).eventState;
+          final authState = ref.watch(authViewmodelProvider).status;
 
           if (authState is Authenticated) {
             setState(() {

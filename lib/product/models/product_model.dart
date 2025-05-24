@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:svemble_new/core/converters/color_converter.dart';
 
 part 'product_model.freezed.dart';
 part 'product_model.g.dart';
@@ -28,6 +30,10 @@ class ProductModel with _$ProductModel {
     final Meta? meta,
     final List<String>? images,
     final String? thumbnail,
+    @ColorConverter()
+    final Color? color,
+    final int? amount,
+    final String? size,
   }) = _ProductModel;
 
   factory ProductModel.fromJson(Map<String, dynamic> json) =>

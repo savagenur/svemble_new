@@ -29,8 +29,8 @@ class CategoryListView extends HookConsumerWidget {
       );
       return null;
     }, []);
-    switch (productViewmodel.categoryListEventState) {
-      case CategoryListEventState.success:
+    switch (productViewmodel.categoryListStatus) {
+      case CategoryListStatus.success:
         final double height;
         if (MediaQuery.sizeOf(context).width > 600) {
           height = 300;
@@ -63,10 +63,10 @@ class CategoryListView extends HookConsumerWidget {
             },
           ),
         );
-      case CategoryListEventState.loading:
+      case CategoryListStatus.loading:
         return Loader();
 
-      case CategoryListEventState.failure:
+      case CategoryListStatus.failure:
         return Center(
           child: Text(
             productViewmodel.categoryListErrorMessage ?? "Error",

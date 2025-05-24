@@ -7,6 +7,7 @@ class AuthRepo {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   User? get currentUser => _firebaseAuth.currentUser;
   bool get isAuthenticated => _firebaseAuth.currentUser != null;
+  String? get uid => currentUser?.uid;
   Future<Either<AppFailure, UserModel>> signIn(
       String email, String password) async {
     try {

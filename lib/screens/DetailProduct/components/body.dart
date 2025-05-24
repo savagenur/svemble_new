@@ -29,8 +29,9 @@ class Body extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-             AspectRatio(
-                aspectRatio: 1, child: CarouselWithIndicatorDemo(
+            AspectRatio(
+                aspectRatio: 1,
+                child: CarouselWithIndicatorDemo(
                   product: product,
                 )),
             SizedBox(
@@ -47,20 +48,24 @@ class Body extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        const SmallTextBg(text: "8554 sold"),
+                        SmallTextBg(text: "${product.stock} sold"),
                         SizedBox(
                           width: getPropScreenWidth(5),
                         ),
                         GestureDetector(
                           onTap: () => Navigator.pushNamed(
-                              context, CommentsScreen.routeName),
+                            context,
+                            CommentsScreen.routeName,
+                            arguments: CommentScreenArguments(product: product),
+                          ),
                           child: Row(
                             children: [
                               const Icon(Icons.star),
                               SizedBox(
                                 width: getPropScreenWidth(5),
                               ),
-                              const Text("4.5 (6,388 отзывов)"),
+                              Text(
+                                  "${product.rating} (${product.reviews?.length} reviews)"),
                             ],
                           ),
                         )
@@ -73,15 +78,15 @@ class Body extends StatelessWidget {
                     SizedBox(
                       height: getPropScreenWidth(10),
                     ),
-                    const SmallTitle(title: "Описание"),
+                    const SmallTitle(title: "Description"),
                     SizedBox(
                       height: getPropScreenWidth(10),
                     ),
                     GestureDetector(
                       onTap: () {},
-                      child: const Text(
-                        "data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data data ",
-                        maxLines: 2,
+                      child: Text(
+                        "${product.description}",
+                        maxLines: 4,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
@@ -96,7 +101,7 @@ class Body extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const SmallTitle(title: "Размер"),
+                                    const SmallTitle(title: "Size"),
                                     SizedBox(
                                       height: getPropScreenWidth(10),
                                     ),
@@ -113,7 +118,7 @@ class Body extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const SmallTitle(title: "Цвет"),
+                              const SmallTitle(title: "Color"),
                               SizedBox(
                                 height: getPropScreenWidth(10),
                               ),
@@ -128,7 +133,7 @@ class Body extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        const SmallTitle(title: "Количество"),
+                        const SmallTitle(title: "Amount"),
                         SizedBox(
                           width: getPropScreenWidth(20),
                         ),

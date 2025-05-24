@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:svemble_new/cart/viewmodel/cart_viewmodel.dart';
 import 'package:svemble_new/core/utils/size_config.dart';
 
 import '../../../components/cart_tile.dart';
 
-class Body extends StatelessWidget {
+class Body extends ConsumerWidget {
   const Body({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final cartViewmodel = ref.watch(cartViewmodelProvider);
     return SizedBox(
       width: double.infinity,
       child: SingleChildScrollView(
@@ -18,8 +21,11 @@ class Body extends StatelessWidget {
               height: getPropScreenWidth(10),
             ),
             ...List.generate(
-              10,
-              (index) => const CartTile(),
+              cartViewmodel.productList.length,
+              (index) {
+                final product = cartViewmodel.productList[index];
+                 return CartTile(product: product,);
+              },
             )
           ],
         ),

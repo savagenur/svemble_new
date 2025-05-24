@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:svemble_new/product/models/product_model.dart';
 
 import '../../../core/utils/constants.dart';
 import '../../../core/utils/size_config.dart';
 import 'rating_circle_icon.dart';
 
 class CommentTile extends StatelessWidget {
+  final Review review;
   const CommentTile({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+    required this.review,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ class CommentTile extends StatelessWidget {
             child: Image.asset("assets/images/user.png"),
           ),
           title: Text(
-            "Nurbolot Muratbekuulu",
+            "${review.reviewerName}",
             style: tertiaryBoldTextStyle,
             overflow: TextOverflow.ellipsis,
           ),
@@ -30,7 +34,9 @@ class CommentTile extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                const RatingCircleIcon(),
+                RatingCircleIcon(
+                  rating: review.rating ?? 0,
+                ),
                 IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.more_horiz),
@@ -39,27 +45,33 @@ class CommentTile extends StatelessWidget {
             ),
           ),
         ),
-        const Text(
-          "The item is very good, my son likes it very much and plays every day.",
-          style: TextStyle(color: kPrimaryColor),
+        Row(
+          children: [
+            Text(
+              "${review.comment}",
+              textAlign: TextAlign.start,
+              style: TextStyle(color: kPrimaryColor),
+            )
+          ],
         ),
         SizedBox(
           height: getPropScreenWidth(10),
         ),
         Row(
           children: [
-            const Icon(Icons.favorite),
-            const SizedBox(
-              width: 5,
-            ),
-            const Text(
-              "729",
-              style: TextStyle(color: kPrimaryColor),
-            ),
+            // const Icon(Icons.favorite),
+            // const SizedBox(
+            //   width: 5,
+            // ),
+            // const Text(
+            //   "729",
+            //   style: TextStyle(color: kPrimaryColor),
+            // ),
             SizedBox(
               width: getPropScreenWidth(15),
             ),
-            const Text("6 days ago")
+            Text(
+                "${DateFormat.yMEd().format(DateTime.parse(review.date!))} days ago")
           ],
         )
       ],

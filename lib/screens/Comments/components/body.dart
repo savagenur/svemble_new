@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:svemble_new/product/models/product_model.dart';
 import 'package:svemble_new/screens/SearchHome/components/rating_row_items.dart';
 import 'package:svemble_new/core/utils/size_config.dart';
 
 import 'comment_tile.dart';
 
 class Body extends StatelessWidget {
-  const Body({super.key});
+  final List<Review> reviews;
+  const Body({super.key, required this.reviews});
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +27,18 @@ class Body extends StatelessWidget {
               shrinkWrap: true,
               children: [
                 ...List.generate(
-                  10,
-                  (index) => Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: getPropScreenWidth(20),
-                        vertical: getPropScreenWidth(10)),
-                    child: const CommentTile(),
-                  ),
+                  reviews.length,
+                  (index) {
+                    final review = reviews[index];
+                    return Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: getPropScreenWidth(20),
+                          vertical: getPropScreenWidth(10)),
+                      child: CommentTile(
+                        review: review,
+                      ),
+                    );
+                  },
                 )
               ],
             ),

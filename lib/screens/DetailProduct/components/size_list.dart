@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:svemble_new/core/enums/product_size.dart';
 
 import '../../../core/utils/constants.dart';
-import '../../../data/sizes.dart';
 import '../../../core/utils/size_config.dart';
 
-class SizeList extends StatelessWidget {
+class SizeList extends StatefulWidget {
   const SizeList({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
+  @override
+  State<SizeList> createState() => _SizeListState();
+}
+
+class _SizeListState extends State<SizeList> {
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-            border: Border.all(color: kSecondaryColor,width: 2),
-      borderRadius: BorderRadius.circular(getPropScreenWidth(30)),
-
-          ),
+        border: Border.all(color: kSecondaryColor, width: 2),
+        borderRadius: BorderRadius.circular(getPropScreenWidth(30)),
+      ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(getPropScreenWidth(30)),
         child: SingleChildScrollView(
@@ -24,7 +28,7 @@ class SizeList extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(getPropScreenWidth(5)),
             child: Row(
-              children: allSizes
+              children: ProductSize.values
                   .map(
                     (size) => GestureDetector(
                       onTap: () {},
@@ -35,15 +39,18 @@ class SizeList extends StatelessWidget {
                           width: getPropScreenWidth(35),
                           padding: EdgeInsets.all(getPropScreenWidth(5)),
                           decoration: BoxDecoration(
-                              color: size == "37" ? kPrimaryColor : null,
+                              color: kPrimaryColor,
+                              // color: size == "37" ? kPrimaryColor : null,
                               shape: BoxShape.circle,
                               border: Border.all(width: 2)),
                           child: Center(
                               child: Text(
-                            size,
+                            size.name.toUpperCase(),
                             style: defaultTextStyle.copyWith(
-                                fontWeight: FontWeight.normal,
-                                color: size == "37" ? Colors.white : null),
+                              fontWeight: FontWeight.normal,
+                              color: Colors.white,
+                              // color: size == "37" ? Colors.white : null,
+                            ),
                           )),
                         ),
                       ),

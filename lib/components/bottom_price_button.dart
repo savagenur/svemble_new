@@ -6,20 +6,20 @@ import '../core/utils/size_config.dart';
 
 class BottomPriceButton extends StatelessWidget {
   final String buttonText;
-  final int price;
+  final double price;
   final VoidCallback onTap;
   const BottomPriceButton({
-    Key? key,
+    super.key,
     required this.buttonText,
-    required this.onTap, required this.price,
-  }) : super(key: key);
+    required this.onTap,
+    required this.price,
+  });
 
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-    
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: getPropScreenWidth(20)),
+        padding: EdgeInsets.symmetric(horizontal: getPropScreenWidth(10)),
         height: 80,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -29,21 +29,25 @@ class BottomPriceButton extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Сумма"),
+                const Text("Total"),
                 const SizedBox(
                   height: 5,
                 ),
                 Text(
-                  "$price сом",
-                  style: 
-                  headerTextStyle,
+                  "\$$price",
+                  style: headerTextStyle,
                 ),
               ],
             ),
             SizedBox(
               width: getPropScreenWidth(30),
             ),
-            Expanded(child: DefaultButton(text: buttonText, onTap: onTap))
+            Expanded(
+              child: DefaultButton(
+                text: buttonText,
+                onTap: onTap,
+              ),
+            ),
           ],
         ),
       ),

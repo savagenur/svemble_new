@@ -21,11 +21,11 @@ class AuthViewmodel extends _$AuthViewmodel {
           email: _authRepo.currentUser?.email,
           username: "Unknown",
         ),
-        eventState: Authenticated(),
+        status: Authenticated(),
       );
     } else {
       return AuthState(
-        eventState: Unauthenticated(),
+        status: Unauthenticated(),
       );
     }
   }
@@ -35,19 +35,19 @@ class AuthViewmodel extends _$AuthViewmodel {
     required String password,
   }) async {
     state = state.copyWith(
-      eventState: AuthLoading(),
+      status: AuthLoading(),
     );
     final res = await _authRepo.signIn(email, password);
     res.fold(
       (failure) {
         state = state.copyWith(
-          eventState: Unauthenticated(),
+          status: Unauthenticated(),
           errorMessage: failure.message,
         );
       },
       (user) {
         state = state.copyWith(
-          eventState: Authenticated(),
+          status: Authenticated(),
           user: user,
           errorMessage: null,
         );
@@ -58,7 +58,7 @@ class AuthViewmodel extends _$AuthViewmodel {
       },
     );
     log(state.errorMessage ?? "null");
-    log(state.eventState.toString());
+    log(state.status.toString());
   }
 
   Future<void> signUp({
@@ -66,12 +66,12 @@ class AuthViewmodel extends _$AuthViewmodel {
     required String password,
   }) async {
     state = state.copyWith(
-      eventState: AuthLoading(),
+      status: AuthLoading(),
     );
     final res = await _authRepo.signUp(email, password);
     state = res.fold(
       (failure) => state.copyWith(
-        eventState: Unauthenticated(),
+        status: Unauthenticated(),
         errorMessage: failure.message,
       ),
       (user) {
@@ -80,7 +80,7 @@ class AuthViewmodel extends _$AuthViewmodel {
           (route) => false,
         );
         return state.copyWith(
-          eventState: Authenticated(),
+          status: Authenticated(),
           user: user,
           errorMessage: null,
         );
@@ -91,11 +91,11 @@ class AuthViewmodel extends _$AuthViewmodel {
   Future<void> signOut() async {
     try {
       state = state.copyWith(
-        eventState: AuthLoading(),
+        status: AuthLoading(),
       );
       await _authRepo.signOut();
       state = state.copyWith(
-        eventState: Unauthenticated(),
+        status: Unauthenticated(),
         user: null,
       );
     } catch (e) {

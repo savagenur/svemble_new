@@ -10,20 +10,21 @@ class AuthState with _$AuthState {
     @Default(
       AuthInitial(),
     )
-    final AuthEventState eventState,
+    final AuthStatus status,
     final String? errorMessage,
   }) = _AuthState;
 }
 
-sealed class AuthEventState {
-  const AuthEventState();
+sealed class AuthStatus {
+  const AuthStatus();
 }
 
-class AuthInitial extends AuthEventState {
+class AuthInitial extends AuthStatus {
   const AuthInitial();
 }
 
-class Authenticated extends AuthEventState {}
+class Authenticated extends AuthStatus {}
 
-class Unauthenticated extends AuthEventState {}
-class AuthLoading extends AuthEventState {}
+class Unauthenticated extends AuthStatus {}
+
+class AuthLoading extends AuthStatus {}

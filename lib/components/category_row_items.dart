@@ -21,8 +21,8 @@ class _CategoryRowItemsState extends ConsumerState<CategoryRowItems> {
   Widget build(BuildContext context) {
     final productViewmodel = ref.watch(productViewmodelProvider);
     final productNotifier = ref.read(productViewmodelProvider.notifier);
-    switch (productViewmodel.categoryListEventState) {
-      case CategoryListEventState.success:
+    switch (productViewmodel.categoryListStatus) {
+      case CategoryListStatus.success:
         final category = productViewmodel.category;
         return SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -68,10 +68,10 @@ class _CategoryRowItemsState extends ConsumerState<CategoryRowItems> {
             ],
           ),
         );
-      case CategoryListEventState.loading:
+      case CategoryListStatus.loading:
         return Loader();
 
-      case CategoryListEventState.failure:
+      case CategoryListStatus.failure:
         return Center(
           child: Text(
             productViewmodel.categoryListErrorMessage ?? "Error",

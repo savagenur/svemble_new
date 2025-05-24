@@ -1,18 +1,25 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:svemble_new/components/confirm_and_cancel_btn.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:svemble_new/cart/viewmodel/cart_viewmodel.dart';
 
+import 'package:svemble_new/components/confirm_and_cancel_btn.dart';
+import 'package:svemble_new/product/models/product_model.dart';
+
+import '../../../components/cart_tile.dart';
 import '../../../components/linear_oval_staff.dart';
 import '../../../core/utils/constants.dart';
 import '../../../core/utils/size_config.dart';
-import '../../../components/cart_tile.dart';
 
-class RemoveBottomSheet extends StatelessWidget {
-  const RemoveBottomSheet({
-    Key? key,
-  }) : super(key: key);
+class RemoveProductFromCartBottomSheet extends ConsumerWidget {
+  final ProductModel product;
+  const RemoveProductFromCartBottomSheet({
+    super.key,
+    required this.product,
+  });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: getPropScreenWidth(20)),
       child: Column(
@@ -23,7 +30,7 @@ class RemoveBottomSheet extends StatelessWidget {
             height: getPropScreenWidth(15),
           ),
           Text(
-            "Удалить из Корзины",
+            "Delete product",
             style: headerTextStyle,
           ),
           SizedBox(
@@ -33,7 +40,8 @@ class RemoveBottomSheet extends StatelessWidget {
           SizedBox(
             height: getPropScreenWidth(15),
           ),
-          const CartTile(
+          CartTile(
+            product: product,
             isCheckoutScreen: true,
           ),
           const Divider(),
@@ -42,8 +50,13 @@ class RemoveBottomSheet extends StatelessWidget {
           ),
           Flexible(
             child: ConfirmAndCancelBtn(
-              confirmTitle: "Да, Удалить",
-              onTap: () {},
+              confirmTitle: "Yes, Delete",
+              onTap: () {
+                ref.read(cartViewmodelProvider.notifier).deleteProductFromCart(
+                      productId: product.id!,
+                    );
+                Navigator.pop(context);
+              },
             ),
           ),
           SizedBox(

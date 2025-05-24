@@ -4,9 +4,10 @@ import '../../../core/utils/constants.dart';
 import '../../../core/utils/size_config.dart';
 
 class RatingCircleIcon extends StatelessWidget {
+  final double rating;
   const RatingCircleIcon({
-    Key? key,
-  }) : super(key: key);
+    super.key, required this.rating,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +32,10 @@ class RatingCircleIcon extends StatelessWidget {
             width: getPropScreenWidth(2),
           ),
           Text(
-            "4.3",
+            "$rating",
             style: tertiaryBoldTextStyle.copyWith(
-                fontSize: kTertiaryFontSize - 1,
-                ),
+              fontSize: kTertiaryFontSize - 1,
+            ),
           ),
         ],
       ),

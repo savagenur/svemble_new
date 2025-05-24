@@ -119,15 +119,18 @@ class AppRoute {
         final args = arguments as DetailProductArguments;
         return PageTransition(
           settings: const RouteSettings(name: DetailProductScreen.routeName),
-          child:  DetailProductScreen(
+          child: DetailProductScreen(
             product: args.product,
           ),
           type: PageTransitionType.rightToLeft,
         );
       case CommentsScreen.routeName:
+        final args = arguments as CommentScreenArguments;
         return PageTransition(
           settings: const RouteSettings(name: CommentsScreen.routeName),
-          child: const CommentsScreen(),
+          child: CommentsScreen(
+            product: args.product,
+          ),
           type: PageTransitionType.rightToLeft,
         );
       case CheckoutScreen.routeName:

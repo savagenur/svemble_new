@@ -35,7 +35,7 @@ class HomeScreen extends ConsumerWidget {
             top: getPropScreenWidth(5)),
         child: GestureDetector(
           onTap: () {
-            if (authViewModel.eventState is Unauthenticated) {
+            if (authViewModel.status is Unauthenticated) {
               showSignInDialog(context);
             }
           },

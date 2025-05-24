@@ -5,9 +5,9 @@ import '../../../core/utils/constants.dart';
 class SmallTitle extends StatelessWidget {
   final String title;
   const SmallTitle({
-    Key? key,
+    super.key,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -39,9 +38,9 @@ class LoginEmailPasswordField extends HookConsumerWidget {
             password: passwordController.value.text.trim(),
           );
           final currentState = ref.read(authViewmodelProvider);
-          if (currentState.eventState is Authenticated) {
+          if (currentState.status is Authenticated) {
             AppDialog.showSuccess("Signed in!");
-          } else if (currentState.eventState is Unauthenticated) {
+          } else if (currentState.status is Unauthenticated) {
             AppDialog.showError(currentState.errorMessage ??
                 "Sign-in failed. Please try again.");
           }

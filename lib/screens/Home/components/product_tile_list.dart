@@ -23,8 +23,8 @@ class ProductTileList extends HookConsumerWidget {
       );
       return null;
     }, []);
-    switch (productViewmodel.productListEventState) {
-      case ProductListEventState.success:
+    switch (productViewmodel.productListStatus) {
+      case ProductListStatus.success:
         return GridView.builder(
           physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
@@ -44,16 +44,14 @@ class ProductTileList extends HookConsumerWidget {
           },
         );
 
-      case ProductListEventState.failure:
+      case ProductListStatus.failure:
         return Center(
           child: Text(
             productViewmodel.productListErrorMessage ?? "Error",
           ),
         );
       default:
-        return SizedBox(
-          height: SizeConfig.screenHeight*.8,
-          child: Loader());
+        return SizedBox(height: SizeConfig.screenHeight * .8, child: Loader());
     }
   }
 }
